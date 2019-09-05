@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Exposed Desk</title>
+    <style>
+      body {
+        overflow-x: hidden;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id='banner'></div>
+      <div id='reservations'></div>
+      <div id='menu' style='position: relative; left: 15%;'></div>
+      <br />
+      <div id='reviews' style='position: relative; left: 15%;'></div>
+    </div>
+
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/styled-components/dist/styled-components.min.js"></script>
+    
+    <script src="http://localhost:3001/:listing/bundle.js"></script>
+    <script src="http://localhost:3002/main.js"></script>
+    <script src="http://localhost:3003/bundle.js"></script>
+    <script src="http://localhost:3004/:L/menu/index_bundle.js"></script>
+
+    <script>
+      ReactDOM.render(
+        React.createElement(BannerGallery.default),
+        document.getElementById('banner')
+      );
+      ReactDOM.render(
+        React.createElement(ReservationsModule.default),
+        document.getElementById('reservations')
+      );
+      ReactDOM.render(
+        React.createElement(window.menu),
+        document.getElementById('menu')
+      );
+      ReactDOM.render(
+        React.createElement(Reviews.default),
+        document.getElementById('reviews')
+      );
+    </script>
+  </body>
+</html>
